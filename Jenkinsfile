@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage ('Git Checkout'){
             steps {
-                git 'https://github.com/formycore/jenkins_nexus_sonar.git'
+                git 'https://github.com/formycore/github_actions_java_techie.git'
             }
         }
         stage ('Test'){
@@ -30,7 +30,7 @@ pipeline {
         stage ('Static Code Analysis'){
             steps {
                 script {
-            withSonarQubeEnv(credentialsId: 'secreta') {
+            withSonarQubeEnv(credentialsId: 'secretc') {
                 sh 'mvn clean package sonar:sonar'
             }
             }
@@ -39,7 +39,7 @@ pipeline {
         stage ('Quality Gate Analysis'){
             steps {
                 script {
-                    waitForQualityGate abortPipeline: false, credentialsId: 'secreta'
+                    waitForQualityGate abortPipeline: false, credentialsId: 'secretc'
 // here we will get error checking for the sonarqube task some <id>
 // we need to create a sonarqube webhook
 //sonarqube -> administration -> configuration-> webhooks -> Name: jenkins_webhook
@@ -77,7 +77,7 @@ pipeline {
                             ],
                             credentialsId: 'nexus-auth',
                             groupId: 'com.example', 
-                            nexusUrl: '34.29.226.153:8081', 
+                            nexusUrl: '34.70.72.245:8081', 
                             nexusVersion: 'nexus3', 
                             protocol: 'http', 
                             repository: "${nexusRepo}",
