@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.javatechie</groupId>
-	<artifactId>github-cicd-actions</artifactId>
+	<artifactId>javatechie</artifactId>
 	<version>1.0.8</version>
 	<name>github-cicd-actions</name>
 	<description>Demo project for Spring Boot</description>

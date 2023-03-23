@@ -59,14 +59,14 @@ pipeline {
 
                     nexusArtifactUploader artifacts: [
                         [
-                            artifactId: 'springboot', 
+                            artifactId: 'javatechie', 
                             classifier: '', 
                             file: 'target/boot.jar', 
                             type: 'jar'
                         ]
                             ],
                             credentialsId: 'nexus-auth',
-                            groupId: 'com.example', 
+                            groupId: 'com.javatechie', 
                             nexusUrl: '10.128.0.15:8081', 
                             nexusVersion: 'nexus3', 
                             protocol: 'http', 
