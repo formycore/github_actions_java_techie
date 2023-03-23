@@ -1,0 +1,9 @@
+pipeline {
+    agent any
+
+    pre.build (
+    {checkout()}
+)
+
+def checkout =  git 'https://github.com/formycore/github_actions_java_techie.git'
+}
