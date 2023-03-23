@@ -43,6 +43,8 @@ pipeline {
 // here the scenario comes if the developer updates the code, with change in version, then we need to we need to change the 
 //version here, manage plugins -> piepline-utility-steps -> check for the read pom using pipeline-utilities
 // in the script section we define a variable 
+// Under pipeline syntax, select nexus fill the content and add artifact also 
+// select all from the pom.xml file
 
             steps {
                 script{
@@ -77,6 +79,17 @@ pipeline {
                       
                 }
             }
+        }
+        stage ('Docker Build'){
+           steps {
+            script{
+                sh 'docker build -t $JOB_NAME:v1.$BUILD_ID'
+                // tagging the version to docker username
+                sh 'docker image tag $JOB_NAME:v1.$BUILD_ID formycore/$JOB_NAME:v1.$BUILD_ID'
+                // tagging the image to latest
+                sh 'docker image tag $JOB_NAME:v1.$BUILD_ID formycore/$JOB_NAME:latest '
+            }
+           }
         }
     }
 }
