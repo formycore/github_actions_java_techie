@@ -12,16 +12,6 @@ pipeline {
                 git 'https://github.com/formycore/github_actions_java_techie.git'
             }
         }
-        stage ('Test'){
-            steps {
-                sh 'mvn test'
-            }
-        }
-        stage('Integration Test'){
-            steps {
-                sh 'mvn verify -DskipUnitTests'
-            }
-        }
         stage ('Build') {
             steps {
                 sh 'mvn clean install'
