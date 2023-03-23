@@ -83,7 +83,7 @@ pipeline {
         stage ('Docker Build'){
            steps {
             script{
-                sh 'docker build -t $JOB_NAME:v1.$BUILD_ID'
+                sh 'docker build -t $JOB_NAME:v1.$BUILD_ID .'
                 // tagging the version to docker username
                 sh 'docker image tag $JOB_NAME:v1.$BUILD_ID formycore/$JOB_NAME:v1.$BUILD_ID'
                 // tagging the image to latest
