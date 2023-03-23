@@ -59,9 +59,9 @@ pipeline {
 
                     nexusArtifactUploader artifacts: [
                         [
-                            artifactId: 'javatechie', 
+                            artifactId: 'github-cicd-actions', 
                             classifier: '', 
-                            file: 'target/boot.jar', 
+                            file: 'target/javatechie-github-actions.jar', 
                             type: 'jar'
                         ]
                             ],

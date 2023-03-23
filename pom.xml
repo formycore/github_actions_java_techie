@@ -9,8 +9,8 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.javatechie</groupId>
-	<artifactId>javatechie</artifactId>
-	<version>1.0.8</version>
+	<artifactId>github-cicd-actions</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>github-cicd-actions</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -36,7 +36,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<finalName>boot</finalName>
+		<finalName>javatechie-github-actions</finalName>
 	</build>
 
 </project>
