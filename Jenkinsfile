@@ -80,6 +80,18 @@ pipeline {
                 }
             }
         }
+        stage ('Docker run'){
+            steps {
+                script {
+                    sh '''
+                    docker rmi $JOB_NAME:v1.$BUILD_ID
+                    docker rmi $JOB_NAME:v1.$BUILD_ID
+                    docker rmi formycore/$JOB_NAME:v1.$BUILD_ID
+                    docker rmi formycore/$JOB_NAME:latest
+                    '''
+                }
+            }
+        }
         stage ('Docker Build'){
            steps {
             script{
@@ -91,5 +103,6 @@ pipeline {
             }
            }
         }
+
     }
 }
